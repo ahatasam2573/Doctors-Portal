@@ -8,7 +8,7 @@ const ContactUs = () => {
             background: `url(${backgroundImage})`,
             borderRadius: '20px'
 
-        }} className='py-8 text-center'>
+        }} className='py-24 text-center'>
             <h4 className='text-xl text-primary font-bold'>Contact Us</h4>
             <h2 className='text-2xl text-white'>Stay Connected With Us</h2>
             <form action="Email" className='grid my-8 ' >
