@@ -4,6 +4,7 @@ import ExceptionPart from './ExceptionPart';
 import Info from './Info';
 import MakeAppointment from './MakeAppointment.js/MakeAppointment';
 import Services from './Services/Services';
+import Testimonial from './Testimonial';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Services></Services>
             <ExceptionPart></ExceptionPart>
             <MakeAppointment></MakeAppointment>
+            <Testimonial></Testimonial>
         </div>
     );
 };
