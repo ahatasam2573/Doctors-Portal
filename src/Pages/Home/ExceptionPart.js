@@ -1,5 +1,6 @@
 import React from 'react';
 import treatmentPic from '../../assets/images/treatment.png'
+import MainButton from '../Shared/MainButton';
 
 const ExceptionPart = () => {
     return (
@@ -10,7 +11,7 @@ const ExceptionPart = () => {
                     <h1 class="text-5xl font-bold">Exceptional Dental <br /> Care, on Your Terms</h1>
                     <p class="py-6">
                         Bacteria in the mouth leftover from the food you eat can create unpleasant smells if not removed. Some food like garlic and onions contain smelly oils transported through the blood. Eventually, those oils reach the lungs, where you breathe them out when talking. Luckily, some foods have the opposite effect and fight bad breath.</p>
-                    <button class="btn btn-primary">Get Started</button>
+                    <MainButton>Get Started</MainButton>
                 </div>
             </div>
         </div >
