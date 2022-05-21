@@ -1,20 +1,24 @@
 import { format } from 'date-fns';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Service from './Service';
 
 const AvailableAppointments = ({ date, setDate }) => {
+    const [services, setServices] = useState([]);
+    useEffect(() => {
+        fetch('services.json')
+            .then(res => res.json())
+            .then(data => setServices(data));
+    }, [])
+
     return (
         <div>
             <h3 className='text-2xl text-secondary text-center font-semibold'>Available Service on {format(date, 'PP')} </h3>
             <p className='text-xl text-center text-accent mt-2'>Please Select a service</p>
-            <div className='grid grid-cols-3 gap-24 mt-12 text-center text-secondary font-bold'>
-                <span>Teeth Orthodontic</span>
-                <span>Cosmetic Dentistry</span>
-                <span>Teeth Cleaning</span>
-                <span>Cavity Protection</span>
-                <span>Pediatric Dental</span>
-                <span>Oral Surgery</span>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24'>
+                {
+                    services.map(service => <Service key={service._id} service={service}></Service>)
+                }
             </div>
-
         </div>
     );
 };
