@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import footerImg from '../../assets/images/footer.png';
 
 const Footer = () => {
+    const yearNow = new Date().getFullYear();
     return (
         <footer style={{
             background: `url(${footerImg})`,
@@ -27,7 +29,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='text-center pt-5'>
-                <p>Copyright © 2022 - All right reserved by Ahatasam Siam</p>
+                <p>Copyright © {yearNow} - All right reserved by Ahatasam Siam</p>
             </div>
         </footer>
 
