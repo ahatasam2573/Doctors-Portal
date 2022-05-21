@@ -1,7 +1,15 @@
 import React from 'react';
+import { format } from 'date-fns';
 
-const BookingModal = ({ treatment }) => {
-    const { name, slots } = treatment;
+const BookingModal = ({ date, treatment, setTreatment }) => {
+    const { _id, name, slots } = treatment;
+
+    const handleBooking = event => {
+        event.preventDefault();
+        const slot = event.target.slot.value;
+        console.log(_id, name, slot);
+        setTreatment(null);
+    }
     return (
         <div>
             <input type="checkbox" id="booking-modal" class="modal-toggle" />
@@ -9,10 +17,19 @@ const BookingModal = ({ treatment }) => {
                 <div class="modal-box">
                     <label for="booking-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 class="font-bold text-lg text-secondary">Booking For: {name}</h3>
-                    <p class="py-4 grid grid-cols-1">{slots}</p>
-                    <div class="modal-action">
-                        <label for="booking-modal-6" class="btn">Yay!</label>
-                    </div>
+                    <form onSubmit={handleBooking} className='grid grid-cols-1 gap-4 justify-items-center mt-4'>
+                        <input type="text" readOnly value={format(date, 'PP')} class="input input-bordered w-full max-w-xs" />
+                        <select name='slot' class="select select-bordered w-full max-w-xs">
+                            <option disabled selected>Choose Time Slot</option>
+                            {
+                                slots.map(slot => <option value={slot}>{slot}</option>)
+                            }
+                        </select>
+                        <input type="text" name='name' placeholder="Your Name" class="input input-bordered w-full max-w-xs" />
+                        <input type="text" name='email' placeholder="Email Address" class="input input-bordered w-full max-w-xs" />
+                        <input type="text" name='phone' placeholder="Phone No" class="input input-bordered w-full max-w-xs" />
+                        <input type="submit" value="submit" class="btn btn-secondary text-white w-full max-w-xs" />
+                    </form>
                 </div>
             </div>
         </div>
