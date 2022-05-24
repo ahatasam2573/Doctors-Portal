@@ -20,7 +20,7 @@ const ContactUs = () => {
                 <input className='p-4 mx-24 lg:mx-80 mb-5 rounded-2xl' type="subject" name="subject" placeholder='Subject' required />
                 <textarea className='p-4 mx-24 lg:mx-80 mb-5 rounded-2xl' name="Your Message" cols="30" rows="10" placeholder='Your Message' required></textarea>
             </form>
-            <input type="submit" value="submit" class="btn btn-secondary text-white w-full max-w-xs" />
+            <input type="submit" value="submit" className="btn btn-secondary text-white w-full max-w-xs" />
         </section >
     );
 };
