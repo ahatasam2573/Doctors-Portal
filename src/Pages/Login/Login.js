@@ -107,9 +107,7 @@ const Login = () => {
 
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="LOGIN" />
-                        if(login){
-                            navigate('/appointment')
-                        }
+
                     </form>
                     <p><small>New to Doctor's Portal? <Link className='text-primary' to='/signUp'>Create a New Account</Link></small></p>
                     <div className="divider">OR</div>
