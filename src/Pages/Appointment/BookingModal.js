@@ -22,7 +22,7 @@ const BookingModal = ({ date, treatment, setTreatment, refetch }) => {
         }
 
         //For sending data from client site to server site
-        fetch('http://localhost:5000/booking', {
+        fetch('https://still-inlet-80584.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
